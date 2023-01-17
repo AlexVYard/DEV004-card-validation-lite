@@ -21,12 +21,13 @@
     input.addEventListener("keyup", stateHandle);
 
     function stateHandle() {
-        if(document.querySelector(".input").value === "") {
-        button.disabled = true;
-          } else {
-        button.disabled = false;
+      if(document.querySelector(".input").value === "") {
+          button.disabled = true;
+        } else {
+          button.disabled = false;
+        }  
     }
-}
+
 // Algoritmo de Luhn
   // Dividimos el numero para trabajar con los digitos que necesitamos
     function validate() {
@@ -34,9 +35,9 @@
       let numeroString = numeroTarjeta.toString();
       let numeroRevertido = numeroString.split('').reverse();
 
-      console.log(numeroRevertido)
+          console.log(numeroRevertido)
 
-// Loop para operar los numeros pares
+  // Loop para operar los numeros pares
       for (let i = 0 ; i <= numeroRevertido.length ; i++) {
         if ((i + 1) % 2 == 0) {
           numeroRevertido[i] = numeroRevertido[i] * 2
@@ -46,7 +47,7 @@
         }  
       }
 
-// Pasamos todos los numeros de string a float (incluso los que ya estaba en float)
+  // Pasamos todos los numeros de string a float (incluso los que ya estaba en float)
       numeroRevertido = numeroRevertido.map(parseFloat)
       console.log(numeroRevertido)
       
@@ -55,14 +56,15 @@
         numeroRevertido[i] = parsefloat(numeroRevertido[i])
       }
 */
-// Sumamos los numeros
+
+  // Sumamos los numeros
       let numeroSumado = 0;
       for (let i = 0 ; i < numeroRevertido.length ; i++) {
         numeroSumado += numeroRevertido[i];
       }
       console.log(numeroSumado)
 
-   /* Intento de sumar los numeros
+/* Intento de sumar los numeros
     let numeroSumado = 0
     numeroSumado = numeroRevertido.reduce(
       (accumulator, currentValue) => accumulator + currentValue,0);
@@ -76,7 +78,7 @@ console.log(numeroSumado)
       
       console.log(numeroRevertido)
 
-    //Intento de suma de los numeros
+  //Intento de suma de los numeros
       let sum = 0;
       while (numeroRevertido) {
           sum += numeroRevertido % 10;
@@ -86,8 +88,7 @@ console.log(numeroSumado)
 
 /*  Algoritmos de Luhn antiguo
       let numeroSumado = numeroRevertido
-*/
-      /*
+
       let numero1 = parseFloat(numeroRevertido.charAt(0));
       let numero3 = parseFloat(numeroRevertido.charAt(2));
       let numero5 = parseFloat(numeroRevertido.charAt(4));
@@ -136,17 +137,14 @@ console.log(numeroSumado)
       console.log(numeroSumado % 10)
 */
 
-// Verificacion que los numeros sean mutiplo de 10
+  // Verificacion que los numeros sean mutiplo de 10
       if (numeroSumado % 10 == 0) {
         alert("El numero ingresado es valido");
             } else {
         alert("El numero ingresado es invalido");
-     
-        }
-
-
-
       }
+
+    }
 
   </script>
 </body>
